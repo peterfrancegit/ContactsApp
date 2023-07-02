@@ -3,3 +3,11 @@ class Contact:
         self.fname = fname
         self.lname = lname
         self.number = number
+
+    def edit(self, field, new_value):
+        if field == 'FNAME':
+            self.fname = new_value
+        elif field == 'LNAME':
+            self.lname = new_value
+        elif field == 'NUMBER':
+            self.number = new_value

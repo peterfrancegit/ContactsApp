@@ -16,7 +16,7 @@ while not toExit:
         number = input("What is the contact's phone number? ")
         duplicate = False
         for contact in myContacts.contact_list:
-            ## phone number must be unique in contact list
+            # phone number must be unique in contact list
             if contact.number == number:
                 print("This number is already assigned")
                 duplicate = True
@@ -24,7 +24,7 @@ while not toExit:
         if not duplicate:
             myContacts.add_contact(Contact(fname, lname, number))
     elif choice in ["2", "3", "4"]:
-        ## Also displays contacts if you choose to edit or delete
+        # Also displays contacts if you choose to edit or delete
         if len(myContacts.contact_list) == 0:
             print("You have zero contacts")
         else:
@@ -57,7 +57,7 @@ while not toExit:
                             isReal = False
                         else:
                             contact = possibles[0]
-                ## Contact must exist to edit or delete
+                # Contact must exist to edit or delete
                 if isReal:
                     if choice == "3":
                         myContacts.delete_contact(contact)
@@ -66,12 +66,11 @@ while not toExit:
                         print("1) First name;  2) Last name;  3) Phone number")
                         choice = input("Choose 1, 2, or 3:  ")
                         if choice == "1":
-                            field = "first name"
+                            field = "FNAME"
                         elif choice == "2":
-                            field = "last name"
+                            field = "LNAME"
                         elif choice == "3":
-                            field = "phone number"
-                        print(f"Edit {field}")
+                            field = "NUMBER"
                         print("What would you like to change this to?")
-                        new_info = input("> ")
-                        myContacts.edit_contact(contact, field, new_info)
+                        new_value = input("> ")
+                        contact.edit(field, new_value)
