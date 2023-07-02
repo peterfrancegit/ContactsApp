@@ -3,7 +3,3 @@ class Contact:
         self.fname = fname
         self.lname = lname
         self.number = number
-        
-## Each contact has its own dictionary for its data
-    def makeEntry(self, fname, lname, number):
-        self.entry = {"fname": fname, "lname": lname, "number": number}
