@@ -1,8 +1,12 @@
 from Contact import *
 from ContactList import *
+from connection import *
+from credentials import HOST_NAME, USER_NAME, PASSWORD
 
 toExit = False
 myContacts = ContactList()
+connection = create_server_connection(HOST_NAME, USER_NAME, PASSWORD)
+show_databases(connection)
 
 while not toExit:
     print("What would you like to do?")
